@@ -10,7 +10,7 @@ const Header = props => {
   const onClickLogout = () => {
     Cookies.remove('jwt_token')
     const {history} = props
-    history.replace('/login')
+    history.replace('/login') 
   }
   return (
     <nav className="navbar">
@@ -49,7 +49,7 @@ const Header = props => {
             </button>
           </li>
         </ul>
-        <label htmlFor="but" />
+        <label htmlFor="but"></label>
         <button
           id="but"
           type="button"

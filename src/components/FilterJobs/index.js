@@ -39,6 +39,17 @@ const salaryRangesList = [
   },
 ]
 
+const loctionList = [
+  {
+    loction: 'Hyderabad',
+    
+  },
+  {
+     loction: "Delhi",
+  },
+
+]
+
 const FilterJobs = props => {
   const renderEmploymentTypesList = () => {
     const {updateEmploymentTypesChecked} = props
@@ -96,6 +107,28 @@ const FilterJobs = props => {
     })
   }
 
+
+   const renderLoction = () => {
+        return loctionList.map(eachloction => {
+
+
+      return (
+        <li className="fliters-list-item" >
+          <input
+            type="checkbox"
+            className="checkbox-input"
+            name="salary ranges"
+            id="loction"
+          
+          />
+          <label htmlFor="loction" className="filter-label">
+          {eachloction.loction}
+          </label>
+        </li>
+      )
+        })
+  }
+
   const renderSalaryRangesTypes = () => (
     <>
       <h1 className="filter-heading">Salary Range</h1>
@@ -108,6 +141,8 @@ const FilterJobs = props => {
       {renderEmploymentTypes()}
       <hr className="separator" />
       {renderSalaryRangesTypes()}
+      <hr className="separator" />
+      {renderLoction()}
     </div>
   )
 }
